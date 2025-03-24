@@ -1,0 +1,32 @@
+name: ci_cd team commit
+
+on:
+  push:
+    branches:
+      - main
+      - team_branch
+  pull_request:
+    branches:
+      - main
+      - team_branch 
+
+jobs:
+  lint-python:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install Flake8 & isort
+        run: pip install flake8 sort
+
+      - name: Check import order with isort
+        run: isort --check-only .
+
+      - name: Run flake8 for style guide enforcement
+        run: flake8 .
