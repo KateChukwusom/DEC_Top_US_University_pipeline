@@ -23,7 +23,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install Flake8 & isort
-        run: pip install flake8 sort
+        run: pip install flake8 isort
 
       - name: Check import order with isort
         run: isort --check-only .
