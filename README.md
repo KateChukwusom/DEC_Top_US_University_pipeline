@@ -1,5 +1,5 @@
 # DEC_Top_US_University_pipeline
-DEC_Top_US_University_pipeline
+
 Scalable Data Pipeline for U.S. University Information Aggregation
 
 ## Overview
